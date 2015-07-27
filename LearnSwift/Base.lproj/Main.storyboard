@@ -71,10 +71,18 @@
                                             <segue destination="4Xr-sq-31p" kind="push" id="J7d-gu-VJn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sue-Bz-Qbz">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Xc8-kP-780" style="IBUITableViewCellStyleDefault" id="sue-Bz-Qbz">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sue-Bz-Qbz" id="IcQ-Vy-mfl">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xc8-kP-780">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="I8b-zx-KXO">
@@ -280,11 +288,22 @@
                                             <segue destination="hwi-Ci-P27" kind="push" id="5E0-90-LhN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="f0g-xH-kLR">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="5mR-wI-J1y" style="IBUITableViewCellStyleDefault" id="f0g-xH-kLR">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f0g-xH-kLR" id="QLy-bX-kdo">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="倒计时" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5mR-wI-J1y">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="PtV-aC-ULR" kind="push" id="0ZP-Sp-nT7"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zSl-Am-6ds">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -358,6 +377,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUQ-8y-Kso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1866" y="694"/>
+        </scene>
+        <!--Count Down View Controller-->
+        <scene sceneID="aab-10-onl">
+            <objects>
+                <viewController storyboardIdentifier="CountDownViewController" id="PtV-aC-ULR" customClass="CountDownViewController" customModule="LearnSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvT-bE-vJQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0dh-FM-5FH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nk2-lo-uPr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wc-Br-Wyu">
+                                <rect key="frame" x="0.0" y="90" width="320" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="385-U8-2uK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW4-WE-Zuw">
+                                <rect key="frame" x="40" y="119" width="100" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countStart:" destination="PtV-aC-ULR" eventType="touchUpInside" id="MVS-ZE-ogb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niK-jM-yvc">
+                                <rect key="frame" x="180" y="119" width="100" height="30"/>
+                                <state key="normal" title="stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countStop:" destination="PtV-aC-ULR" eventType="touchUpInside" id="lRX-mC-iba"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5Wc-Br-Wyu" secondAttribute="trailing" id="8l0-K6-6Yd"/>
+                            <constraint firstItem="5Wc-Br-Wyu" firstAttribute="top" secondItem="bvT-bE-vJQ" secondAttribute="bottom" constant="26" id="9No-EA-v3p"/>
+                            <constraint firstItem="niK-jM-yvc" firstAttribute="width" secondItem="eW4-WE-Zuw" secondAttribute="width" id="ITe-DI-euv"/>
+                            <constraint firstItem="niK-jM-yvc" firstAttribute="height" secondItem="eW4-WE-Zuw" secondAttribute="height" id="Nfe-cG-6gl"/>
+                            <constraint firstItem="eW4-WE-Zuw" firstAttribute="top" secondItem="5Wc-Br-Wyu" secondAttribute="bottom" constant="8" id="cw5-ka-aQW"/>
+                            <constraint firstItem="niK-jM-yvc" firstAttribute="centerY" secondItem="eW4-WE-Zuw" secondAttribute="centerY" id="dLA-9F-McT"/>
+                            <constraint firstAttribute="trailing" secondItem="niK-jM-yvc" secondAttribute="trailing" constant="40" id="fQb-LI-05L"/>
+                            <constraint firstItem="5Wc-Br-Wyu" firstAttribute="leading" secondItem="Nk2-lo-uPr" secondAttribute="leading" id="gxR-UX-3E2"/>
+                            <constraint firstItem="niK-jM-yvc" firstAttribute="leading" secondItem="eW4-WE-Zuw" secondAttribute="trailing" constant="40" id="umi-ir-CBj"/>
+                            <constraint firstItem="eW4-WE-Zuw" firstAttribute="leading" secondItem="Nk2-lo-uPr" secondAttribute="leading" constant="40" id="vzv-3j-ar4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lOG-ao-1yI"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="labelTime" destination="5Wc-Br-Wyu" id="Zal-9p-czj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Npe-NA-XjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="1037"/>
         </scene>
     </scenes>
 </document>
